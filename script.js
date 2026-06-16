@@ -1,16 +1,50 @@
-console.log("Script loaded!");
+const messages = [
+  "Message 1",
+  "Message 2",
+  "Message 3"
+];
 
 const openButton = document.getElementById("openBottle");
+const starField = document.getElementById("starField");
 
-console.log("Button found:", openButton);
+const modal = document.getElementById("messageModal");
+const starNumber = document.getElementById("starNumber");
+const starMessage = document.getElementById("starMessage");
 
-if (openButton) {
-    openButton.addEventListener("click", () => {
-        console.log("Button clicked!");
-        alert("Bottle opened!");
-    });
-}
+document.getElementById("closeModal")
+.addEventListener("click", () => {
+    modal.classList.add("hidden");
+});
 
-document.body.addEventListener("click", () => {
-    console.log("Body clicked!");
+openButton.addEventListener("click", () => {
+
+    document.getElementById("intro").style.display = "none";
+
+    for(let i = 0; i < messages.length; i++) {
+
+        const star = document.createElement("div");
+
+        star.className = "star";
+        star.innerHTML = "⭐";
+
+        star.style.left =
+            Math.random() * window.innerWidth + "px";
+
+        star.style.top =
+            Math.random() * window.innerHeight + "px";
+
+        star.addEventListener("click", () => {
+
+            starNumber.textContent =
+                `Star ${i + 1}`;
+
+            starMessage.textContent =
+                messages[i];
+
+            modal.classList.remove("hidden");
+
+        });
+
+        starField.appendChild(star);
+    }
 });
