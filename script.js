@@ -10,3 +10,7 @@ if (openButton) {
         alert("Bottle opened!");
     });
 }
+
+document.body.addEventListener("click", () => {
+    console.log("Body clicked!");
+});
