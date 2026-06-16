@@ -19,12 +19,13 @@ for(let i = 0; i < 100; i++) {
 
     star.className = "star";
 
+    star.textContent = "⭐";
+
     star.style.left =
-        Math.random() * 160 + "px";
+    Math.random() * 130 + "px";
 
     star.style.top =
-        Math.random() * 200 + "px";
-
+    Math.random() * 240 + "px";
     bottleStars.appendChild(star);
 
 }
