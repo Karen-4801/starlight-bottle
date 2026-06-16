@@ -12,35 +12,100 @@ body {
 }
 
 #bottle {
-    width: 180px;
+
+    width: 220px;
     height: 320px;
-    margin: 30px auto;
+
+    margin: 40px auto;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition: transform .3s ease;
+
+}
+
+#bottle:hover {
+
+    transform: scale(1.03);
+
+}
+
+#bottle::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 85px;
+
+    width: 50px;
+    height: 70px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        2px solid rgba(255,255,255,.2);
+
+    border-radius:
+        10px 10px 0 0;
+
+}
+#bottle::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 50px;
+
+    width: 220px;
+    height: 250px;
 
     background:
         linear-gradient(
             135deg,
-            rgba(255,255,255,.25),
-            rgba(255,255,255,.05)
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04)
         );
 
-    border: 2px solid rgba(255,255,255,.3);
-
-    backdrop-filter: blur(4px);
-
-    box-shadow:
-        0 0 30px rgba(120,180,255,.2);
+    border:
+        2px solid rgba(255,255,255,.2);
 
     border-radius:
-        40px 40px 60px 60px;
+        80px 80px 50px 50px;
+
+    backdrop-filter:
+        blur(6px);
+
+    box-shadow:
+        0 0 30px rgba(100,150,255,.15);
+
 }
 
-#cork {
-    width: 50px;
-    height: 20px;
-    background: tan;
+.cork {
+
     position: absolute;
-    top: -20px;
-    left: 35px;
+
+    top: -10px;
+    left: 80px;
+
+    width: 60px;
+    height: 25px;
+
+    background:
+        linear-gradient(
+            #d8b27c,
+            #b98a56
+        );
+
+    border-radius: 6px;
+
+    z-index: 5;
+
 }
 
 button {
