@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>200 Stars For Hugo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="intro">
+
+    <h1>Happy Birthday Hugo ✨</h1>
+
+    <p>
+        I collected 200 stars for you.
+    </p>
+
+    <div id="bottle">
+        <div id="cork"></div>
+    </div>
+
+    <button id="openBottle">
+        Open the Bottle
+    </button>
+
+</div>
+
+<div id="starField"></div>
+
+<div id="messageModal" class="hidden">
+
+    <div class="card">
+
+        <span id="closeModal">✕</span>
+
+        <h2 id="starNumber"></h2>
+
+        <p id="starMessage"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
