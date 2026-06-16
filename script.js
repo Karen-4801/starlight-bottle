@@ -27,7 +27,6 @@ openButton.addEventListener("click", () => {
     const star = document.createElement("div");
 
     star.className = "star";
-    star.textContent = "⭐";
 
     const startX = window.innerWidth / 2;
     const startY = 250;
