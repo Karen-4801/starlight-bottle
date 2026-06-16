@@ -1,6 +1,6 @@
 const messages = Array.from(
-  { length: 200 },
-  (_, i) => `This is star #${i + 1}`
+    { length: 100 },
+    (_, i) => `Star ${i + 1}`
 );
 
 const openButton = document.getElementById("openBottle");
@@ -9,6 +9,25 @@ const starField = document.getElementById("starField");
 const modal = document.getElementById("messageModal");
 const starNumber = document.getElementById("starNumber");
 const starMessage = document.getElementById("starMessage");
+const bottleStars =
+    document.getElementById("bottleStars");
+
+for(let i = 0; i < 100; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left =
+        Math.random() * 160 + "px";
+
+    star.style.top =
+        Math.random() * 200 + "px";
+
+    bottleStars.appendChild(star);
+
+}
 
 document.getElementById("closeModal")
 .addEventListener("click", () => {
