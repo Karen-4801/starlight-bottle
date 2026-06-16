@@ -94,33 +94,19 @@ button {
 }
 
 .star {
+
     position: absolute;
-    width: 24px;
-    height: 24px;
 
-    background: gold;
+    font-size: 14px;
 
-    clip-path: polygon(
-        50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
-    );
+    color: gold;
 
-    box-shadow:
-        0 0 10px gold,
-        0 0 20px gold;
-
-    cursor: pointer;
+    filter:
+        drop-shadow(0 0 4px gold);
 
     animation:
         twinkle 2s infinite alternate;
+
 }
 
 #counter {
@@ -139,15 +125,15 @@ button {
 
     position: absolute;
 
-    top: 60px;
-    left: 20px;
+    top: 95px;
+    left: 75px;
 
-    width: 180px;
-    height: 220px;
+    width: 150px;
+    height: 260px;
 
     overflow: hidden;
 
-    z-index: 2;
+    pointer-events: none;
 
 }
 
