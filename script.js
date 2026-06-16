@@ -19,7 +19,8 @@ openButton.addEventListener("click", () => {
 
     document.getElementById("intro").style.display = "none";
 
- 
+ let discovered = 0;
+const openedStars = new Set();
 
    for(let i = 0; i < messages.length; i++) {
 
@@ -54,6 +55,16 @@ openButton.addEventListener("click", () => {
         starMessage.textContent = messages[i];
 
         modal.classList.remove("hidden");
+
+      if (!openedStars.has(i)) {
+
+    openedStars.add(i);
+    discovered++;
+
+    document.getElementById("counter")
+        .textContent =
+        `${discovered} / ${messages.length} Stars Found`;
+}
 
     });
 
