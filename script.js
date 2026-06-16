@@ -25,7 +25,6 @@ openButton.addEventListener("click", () => {
         const star = document.createElement("div");
 
         star.className = "star";
-        star.innerHTML = "⭐";
 
         star.style.left =
             Math.random() * window.innerWidth + "px";
