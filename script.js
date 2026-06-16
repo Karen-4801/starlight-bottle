@@ -20,30 +20,44 @@ openButton.addEventListener("click", () => {
 
     document.getElementById("intro").style.display = "none";
 
-    for(let i = 0; i < messages.length; i++) {
+ 
 
-        const star = document.createElement("div");
+   for(let i = 0; i < messages.length; i++) {
 
-        star.className = "star";
+    const star = document.createElement("div");
 
-        star.style.left =
-            Math.random() * window.innerWidth + "px";
+    star.className = "star";
+    star.textContent = "⭐";
 
-        star.style.top =
-            Math.random() * window.innerHeight + "px";
+    const startX = window.innerWidth / 2;
+    const startY = 250;
 
-        star.addEventListener("click", () => {
+    star.style.left = startX + "px";
+    star.style.top = startY + "px";
 
-            starNumber.textContent =
-                `Star ${i + 1}`;
+    starField.appendChild(star);
 
-            starMessage.textContent =
-                messages[i];
+    const x = (Math.random() - 0.5) * window.innerWidth;
+    const y = (Math.random() - 0.5) * window.innerHeight;
 
-            modal.classList.remove("hidden");
+    star.animate(
+        [
+            { transform: "translate(0,0)" },
+            { transform: `translate(${x}px, ${y}px)` }
+        ],
+        {
+            duration: 2000,
+            fill: "forwards"
+        }
+    );
 
-        });
+    star.addEventListener("click", () => {
 
-        starField.appendChild(star);
-    }
-});
+        starNumber.textContent = `Star ${i + 1}`;
+        starMessage.textContent = messages[i];
+
+        modal.classList.remove("hidden");
+
+    });
+
+}
