@@ -25,7 +25,6 @@ openButton.addEventListener("click", () => {
    for(let i = 0; i < messages.length; i++) {
 
     const star = document.createElement("div");
-
     star.className = "star";
 
     const startX = window.innerWidth / 2;
