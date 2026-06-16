@@ -14,8 +14,8 @@ body {
 
 #bottle {
 
-    width: 380px;
-    height: 450px;
+    width: 400px;
+    height: 500px;
 
     margin: 20px auto;
 
@@ -29,7 +29,7 @@ body {
 
 #bottle:hover {
 
-    transform: scale(1.03);
+    transform: scale(1.02);
 
 }
 
@@ -39,7 +39,7 @@ body {
     height: 100%;
 
     filter:
-        drop-shadow(0 0 20px rgba(100,150,255,.15));
+        drop-shadow(0 0 20px rgba(120,170,255,.2));
 
 }
 
@@ -125,15 +125,15 @@ button {
 
     position: absolute;
 
-    top: 95px;
-    left: 75px;
+    top: 115px;
+    left: 90px;
 
-    width: 150px;
-    height: 260px;
+    width: 220px;
+    height: 300px;
 
     overflow: hidden;
 
-    pointer-events: none;
+    z-index: 5;
 
 }
 
