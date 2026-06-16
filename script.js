@@ -1,8 +1,7 @@
-const messages = [
-  "Message 1",
-  "Message 2",
-  "Message 3"
-];
+const messages = Array.from(
+  { length: 200 },
+  (_, i) => `This is star #${i + 1}`
+);
 
 const openButton = document.getElementById("openBottle");
 const starField = document.getElementById("starField");
