@@ -123,3 +123,15 @@ button {
         twinkle 2s infinite alternate;
 }
 
+#counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: rgba(0,0,0,.4);
+    padding: 10px 15px;
+    border-radius: 20px;
+
+    backdrop-filter: blur(8px);
+}
+
