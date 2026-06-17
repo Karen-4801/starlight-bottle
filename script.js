@@ -94,7 +94,7 @@ const starLayer =
 const bottleStars =
     document.getElementById("bottleStars");
     
- for(let i = 0; i < 60; i++) {   
+ for(let i = 0; i < 100; i++) {   
      
 const star =
     document.createElementNS(svgNS, "path");
