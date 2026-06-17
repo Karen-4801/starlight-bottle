@@ -41,3 +41,30 @@ setTimeout(() => {
         );
 
 }, 12000);
+
+setTimeout(() => {
+
+    const bottleScene =
+        document.getElementById("bottleScene");
+
+    bottleScene.style.visibility =
+        "visible";
+
+    bottleScene.animate(
+        [
+            {
+                opacity: 0,
+                transform: "scale(.8)"
+            },
+            {
+                opacity: 1,
+                transform: "scale(1)"
+            }
+        ],
+        {
+            duration: 2500,
+            fill: "forwards"
+        }
+    );
+
+}, 14000);
