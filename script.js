@@ -93,10 +93,8 @@ const starLayer =
     
 const bottleStars =
     document.getElementById("bottleStars");
-
-for(let i = 0; i < 60; i++) {
-
-   const starSVG = `
+    
+const starSVG = `
 <svg viewBox="0 0 64 64" class="star-svg">
     <path
         fill="#FFCD1F"
@@ -108,8 +106,14 @@ for(let i = 0; i < 60; i++) {
     />
 </svg>
 `;
+for(let i = 0; i < 60; i++) {
 
-   star.innerHTML = starSVG;
+    const star =
+        document.createElement("div");
+
+    star.classList.add("bottleStar");
+
+    star.innerHTML = starSVG;
 
     const x =
         40 + Math.random() * 100;
@@ -117,25 +121,9 @@ for(let i = 0; i < 60; i++) {
     const y =
         75 + Math.random() * 110;
 
-    star.setAttribute("x", x);
-    star.setAttribute("y", y);
+    star.style.left = x + "px";
+    star.style.top = y + "px";
 
-    const size = 16 + Math.random() * 14;
-
-    star.style.width = size + "px";
-    star.style.height = size + "px";
-
-    star.style.transform =
-    `rotate(${Math.random() * 360}deg)`;  
-
-    star.style.opacity =
-        0.4 + Math.random() * 0.6;
-
-    star.style.animationDelay =
-    Math.random() * 2 + "s";
-
-    star.classList.add("bottleStar");
-    
     starLayer.appendChild(star);
 
 }
