@@ -94,39 +94,22 @@ const starLayer =
 const bottleStars =
     document.getElementById("bottleStars");
     
-const starSVG = `
-<svg viewBox="0 0 64 64" class="star-svg">
-    <path
-        fill="#FFCD1F"
-        stroke="#CB9302"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="m40.3 23.6-8.3-19.5-8.2 19.6c-8.7 3.5-20.2 8.3-20.1 8.3l20.1 8.2 8.2 19.7 8.3-19.7 19.9-8.2-19.9-8.4z"
-    />
-</svg>
-`;
-for(let i = 0; i < 60; i++) {
+const star =
+    document.createElementNS(svgNS, "path");
 
-    const star =
-        document.createElement("div");
+star.setAttribute(
+    "d",
+    "m40.3 23.6-8.3-19.5-8.2 19.6c-8.7 3.5-20.2 8.3-20.1 8.3l20.1 8.2 8.2 19.7 8.3-19.7 19.9-8.2-19.9-8.4z"
+);
 
-    star.classList.add("bottleStar");
+star.setAttribute("fill", "gold");
 
-    star.innerHTML = starSVG;
+star.setAttribute(
+    "transform",
+    "translate(90,120) scale(0.3)"
+);
 
-    const x =
-        40 + Math.random() * 100;
-
-    const y =
-        75 + Math.random() * 110;
-
-    star.style.left = x + "px";
-    star.style.top = y + "px";
-
-    starLayer.appendChild(star);
-
-}
+starLayer.appendChild(star);
 
 }, 14000);
 
