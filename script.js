@@ -114,6 +114,15 @@ star.setAttribute("stroke-linecap", "round");
 
 star.setAttribute("stroke-linejoin", "round");
 
+star.style.filter =
+    `drop-shadow(0 0 ${2 + Math.random()*4}px gold)`;
+
+star.style.animation =
+    `twinkle ${2 + Math.random()*3}s ease-in-out infinite`;
+
+star.style.animationDelay =
+    `${Math.random()*3}s`;
+
 const x =
         30 + Math.random() * 120;
 
