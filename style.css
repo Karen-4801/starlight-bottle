@@ -122,6 +122,55 @@ body {
 
 }
 
+#bottle {
+
+    position: relative;
+
+}
+
+.bottleStar {
+
+    position: absolute;
+
+    color: gold;
+
+    font-size: 10px;
+
+    text-shadow:
+        0 0 5px gold,
+        0 0 10px gold;
+
+    animation:
+        bottleTwinkle 3s infinite;
+
+}
+
+@keyframes bottleTwinkle {
+
+    0% {
+        opacity: .3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .3;
+    }
+
+}
+
+#bottleStars {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+}
+
 .bgStar {
 
     position: fixed;
