@@ -85,6 +85,30 @@ setTimeout(() => {
         }
     );
 
-}, 14000);
+const bottleStars =
+    document.getElementById("bottleStars");
+
+for(let i = 0; i < 40; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className =
+        "bottleStar";
+
+    star.textContent = "✦";
+
+    star.style.left =
+        30 + Math.random() * 60 + "%";
+
+    star.style.top =
+        20 + Math.random() * 55 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    bottleStars.appendChild(star);
+
+}}, 14000);
 
 
