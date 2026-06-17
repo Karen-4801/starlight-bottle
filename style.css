@@ -80,13 +80,77 @@ body {
 
     margin-bottom: 20px;
 
+    animation:
+        floatBottle 4s ease-in-out infinite;
+
+}
+
+@keyframes floatBottle {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
 }
 
 #bottle svg {
 
     width: 100%;
-
     height: auto;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,255,255,.2))
+        drop-shadow(0 0 30px rgba(100,150,255,.2));
+
+}
+
+#bottlePrompt {
+
+    opacity: .6;
+
+    margin-top: 10px;
+
+    letter-spacing: 2px;
+
+}
+
+.bgStar {
+
+    position: fixed;
+
+    width: 2px;
+    height: 2px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation:
+        twinkle 3s infinite;
+
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: .2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .2;
+    }
 
 }
 
