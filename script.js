@@ -1,99 +1,26 @@
-const messages = Array.from(
-    { length: 100 },
-    (_, i) => `Star ${i + 1}`
-);
 
-const openButton = document.getElementById("openBottle");
-const starField = document.getElementById("starField");
+const lines =
+    document.querySelectorAll(".storyLine");
 
-const modal = document.getElementById("messageModal");
-const starNumber = document.getElementById("starNumber");
-const starMessage = document.getElementById("starMessage");
-const bottleStars =
-    document.getElementById("bottleStars");
+lines.forEach((line, index) => {
 
-for(let i = 0; i < 100; i++) {
+    setTimeout(() => {
 
-    const svgNS =
-  "http://www.w3.org/2000/svg";
+        line.animate(
+            [
+                {
+                    opacity: 0
+                },
+                {
+                    opacity: 1
+                }
+            ],
+            {
+                duration: 1500,
+                fill: "forwards"
+            }
+        );
 
-const starLayer =
-  document.getElementById("starLayer");
-
-const star =
-  document.createElementNS(svgNS, "text");
-
-star.setAttribute("x", 90);
-star.setAttribute("y", 120);
-
-star.setAttribute("fill", "#FFD700");
-
-star.setAttribute("font-size", "8");
-
-star.textContent = "★";
-
-starLayer.appendChild(star);
-
-}
-
-document.getElementById("closeModal")
-.addEventListener("click", () => {
-    modal.classList.add("hidden");
-});
-
-openButton.addEventListener("click", () => {
-
-    document.getElementById("intro").style.display = "none";
-
- let discovered = 0;
-const openedStars = new Set();
-
-   for(let i = 0; i < messages.length; i++) {
-
-    const star = document.createElement("div");
-    star.className = "star";
-
-    const startX = window.innerWidth / 2;
-    const startY = 250;
-
-    star.style.left = startX + "px";
-    star.style.top = startY + "px";
-
-    starField.appendChild(star);
-
-    const x = (Math.random() - 0.5) * window.innerWidth;
-    const y = (Math.random() - 0.5) * window.innerHeight;
-
-    star.animate(
-        [
-            { transform: "translate(0,0)" },
-            { transform: `translate(${x}px, ${y}px)` }
-        ],
-        {
-            duration: 2000,
-            fill: "forwards"
-        }
-    );
-
-    star.addEventListener("click", () => {
-
-        starNumber.textContent = `Star ${i + 1}`;
-        starMessage.textContent = messages[i];
-
-        modal.classList.remove("hidden");
-
-      if (!openedStars.has(i)) {
-
-    openedStars.add(i);
-    discovered++;
-
-    document.getElementById("counter")
-        .textContent =
-        `${discovered} / ${messages.length} Stars Found`;
-}
-
-    });
-
-}
+    }, index * 2000);
 
 });
