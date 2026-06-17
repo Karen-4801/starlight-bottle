@@ -14,19 +14,25 @@ const bottleStars =
 
 for(let i = 0; i < 100; i++) {
 
-    const star =
-        document.createElement("div");
+    const svgNS =
+  "http://www.w3.org/2000/svg";
 
-    star.className = "star";
+const starLayer =
+  document.getElementById("starLayer");
 
-    star.textContent = "⭐";
+const star =
+  document.createElementNS(svgNS, "text");
 
-    star.style.left =
-    Math.random() * 130 + "px";
+star.setAttribute("x", 90);
+star.setAttribute("y", 120);
 
-    star.style.top =
-    Math.random() * 240 + "px";
-    bottleStars.appendChild(star);
+star.setAttribute("fill", "#FFD700");
+
+star.setAttribute("font-size", "8");
+
+star.textContent = "★";
+
+starLayer.appendChild(star);
 
 }
 
