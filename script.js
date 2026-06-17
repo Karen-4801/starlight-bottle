@@ -102,11 +102,19 @@ star.setAttribute(
     "m40.3 23.6-8.3-19.5-8.2 19.6c-8.7 3.5-20.2 8.3-20.1 8.3l20.1 8.2 8.2 19.7 8.3-19.7 19.9-8.2-19.9-8.4z"
 );
 
-star.setAttribute("fill", "gold");
+star.setAttribute("fill", "#FFCD1F");
+
+star.setAttribute("stroke", "#CB9302");
+
+star.setAttribute("stroke-width", "1.5");
+
+star.setAttribute("stroke-linecap", "round");
+
+star.setAttribute("stroke-linejoin", "round");
 
 star.setAttribute(
     "transform",
-    "translate(90,120) scale(0.3)"
+    "translate(90,120) scale(1)"
 );
 
 starLayer.appendChild(star);
