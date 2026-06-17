@@ -94,6 +94,8 @@ const starLayer =
 const bottleStars =
     document.getElementById("bottleStars");
     
+ for(let i = 0; i < 60; i++) {   
+     
 const star =
     document.createElementNS(svgNS, "path");
 
@@ -112,13 +114,26 @@ star.setAttribute("stroke-linecap", "round");
 
 star.setAttribute("stroke-linejoin", "round");
 
-star.setAttribute(
-    "transform",
-    "translate(90,120) scale(1)"
-);
+const x =
+        30 + Math.random() * 120;
+
+    const y =
+        80 + Math.random() * 110;
+
+    const scale =
+        0.18 + Math.random() * 0.15;
+
+    const rotation =
+        Math.random() * 360;
+
+    star.setAttribute(
+        "transform",
+        `translate(${x},${y}) scale(${scale}) rotate(${rotation})`
+    );
 
 starLayer.appendChild(star);
-
+     
+ }
 }, 14000);
 
 
