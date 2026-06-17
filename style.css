@@ -181,17 +181,17 @@ body {
 @keyframes twinkle {
 
     0% {
-        opacity: .2;
-    }
-
-    50% {
-        opacity: 1;
+        opacity: .6;
     }
 
     100% {
-        opacity: .2;
+        opacity: 1;
     }
+}
 
+.star {
+    animation:
+        twinkle 2s ease-in-out infinite alternate;
 }
 
 /* ---------- STARS ---------- */
@@ -210,4 +210,24 @@ body {
 
     display: none;
 
+}
+
+.star {
+    position: absolute;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+.star-svg {
+    width: 100%;
+    height: 100%;
+}
+.star-svg {
+    filter:
+        drop-shadow(0 0 4px #ffd84d)
+        drop-shadow(0 0 8px #ffd84d);
 }
