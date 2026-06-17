@@ -130,18 +130,9 @@ body {
 
 .bottleStar {
 
-    position: absolute;
-
-    color: gold;
-
-    font-size: 15px;
-
-    text-shadow:
-        0 0 5px gold,
-        0 0 10px gold;
-
     animation:
-        bottleTwinkle 3s infinite;
+        bottleTwinkle 2s infinite
+        alternate;
 
 }
 
