@@ -96,13 +96,20 @@ const bottleStars =
 
 for(let i = 0; i < 60; i++) {
 
-    const star =
-        document.createElementNS(
-            svgNS,
-            "text"
-        );
+   const starSVG = `
+<svg viewBox="0 0 64 64" class="star-svg">
+    <path
+        fill="#FFCD1F"
+        stroke="#CB9302"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m40.3 23.6-8.3-19.5-8.2 19.6c-8.7 3.5-20.2 8.3-20.1 8.3l20.1 8.2 8.2 19.7 8.3-19.7 19.9-8.2-19.9-8.4z"
+    />
+</svg>
+`;
 
-    star.textContent = "✦";
+   star.innerHTML = starSVG;
 
     const x =
         40 + Math.random() * 100;
@@ -113,15 +120,19 @@ for(let i = 0; i < 60; i++) {
     star.setAttribute("x", x);
     star.setAttribute("y", y);
 
-    star.setAttribute("fill", "#FFD700");
+    const size = 16 + Math.random() * 14;
 
-    star.setAttribute(
-        "font-size",
-        12 + Math.random() * 4
-    );
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.transform =
+    `rotate(${Math.random() * 360}deg)`;  
 
     star.style.opacity =
         0.4 + Math.random() * 0.6;
+
+    star.style.animationDelay =
+    Math.random() * 2 + "s";
 
     star.classList.add("bottleStar");
     
