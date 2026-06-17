@@ -94,7 +94,7 @@ const starLayer =
 const bottleStars =
     document.getElementById("bottleStars");
 
-for(let i = 0; i < 80; i++) {
+for(let i = 0; i < 60; i++) {
 
     const star =
         document.createElementNS(
@@ -117,7 +117,7 @@ for(let i = 0; i < 80; i++) {
 
     star.setAttribute(
         "font-size",
-        10 + Math.random() * 4
+        12 + Math.random() * 4
     );
 
     star.style.opacity =
