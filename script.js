@@ -24,3 +24,20 @@ lines.forEach((line, index) => {
     }, index * 2000);
 
 });
+
+setTimeout(() => {
+
+    document
+        .getElementById("introScene")
+        .animate(
+            [
+                { opacity: 1 },
+                { opacity: 0 }
+            ],
+            {
+                duration: 2000,
+                fill: "forwards"
+            }
+        );
+
+}, 12000);
