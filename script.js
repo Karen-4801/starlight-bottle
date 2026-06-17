@@ -85,29 +85,49 @@ setTimeout(() => {
         }
     );
 
+const svgNS =
+    "http://www.w3.org/2000/svg";
+
+const starLayer =
+    document.getElementById("starLayer");
+    
 const bottleStars =
     document.getElementById("bottleStars");
 
 for(let i = 0; i < 40; i++) {
 
     const star =
-        document.createElement("div");
-
-    star.className =
-        "bottleStar";
+        document.createElementNS(
+            svgNS,
+            "text"
+        );
 
     star.textContent = "✦";
 
-    star.style.left =
-        30 + Math.random() * 60 + "%";
+    const x =
+        40 + Math.random() * 100;
 
-    star.style.top =
-        20 + Math.random() * 55 + "%";
+    const y =
+        75 + Math.random() * 110;
 
-    star.style.animationDelay =
-        Math.random() * 3 + "s";
+    star.setAttribute("x", x);
+    star.setAttribute("y", y);
 
-    bottleStars.appendChild(star);
+    star.setAttribute("fill", "#FFD700");
+
+    star.setAttribute(
+        "font-size",
+        6 + Math.random() * 4
+    );
+
+    star.style.opacity =
+        0.4 + Math.random() * 0.6;
+
+    star.classList.add("bottleStar");
+    
+    starLayer.appendChild(star);
+
+}
 
 }}, 14000);
 
