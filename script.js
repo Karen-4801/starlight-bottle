@@ -68,3 +68,23 @@ setTimeout(() => {
     );
 
 }, 14000);
+
+for(let i = 0; i < 80; i++) {
+
+    const star =
+        document.createElement("div");
+
+    star.className = "bgStar";
+
+    star.style.left =
+        Math.random() * window.innerWidth + "px";
+
+    star.style.top =
+        Math.random() * window.innerHeight + "px";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    document.body.appendChild(star);
+
+}
