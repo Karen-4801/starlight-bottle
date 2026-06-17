@@ -109,7 +109,6 @@ const bottleStars =
 const star =
     document.createElementNS(svgNS, "path");
 
-);
 
 star.setAttribute(
     "d",
