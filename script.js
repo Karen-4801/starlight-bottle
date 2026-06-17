@@ -23,10 +23,14 @@ const lines =
 const bottle =
     document.getElementById("bottle");
 
+console.log("Bottle:", bottle);
+
 const cork =
     document.getElementById("cork");
 
-bottle.addEventListener("click", openBottle);
+bottle.addEventListener("click", () => {
+    console.log("BOTTLE CLICKED");
+});
 
 let bottleOpened = false;
 
