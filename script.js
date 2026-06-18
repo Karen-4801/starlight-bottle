@@ -111,8 +111,7 @@ const svgNS =
 const starLayer =
     document.getElementById("starLayer");
     
-const bottleStars =
-    document.getElementById("bottleStars");
+const bottleStars = [];
     
  for(let i = 0; i < 100; i++) {   
      
@@ -162,7 +161,7 @@ const x =
     );
 
 starLayer.appendChild(star);
-     
+bottleStars.push(star);     
  }
 }, 14000);
 
@@ -221,8 +220,59 @@ function popCork() {
 
 function releaseStars() {
 
+    document.getElementById("bottleSvg")
+.animate(
+[
+    {
+        filter:
+            "drop-shadow(0 0 0 gold)"
+    },
+    {
+        filter:
+            "drop-shadow(0 0 40px gold)"
+    }
+],
+{
+    duration: 400
+}
+);
     console.log(
         "Stars released!"
     );
+
+    function releaseStars() {
+
+    bottleStars.forEach(star => {
+
+        const x =
+            (Math.random() - 0.5) * 1200;
+
+        const y =
+            (Math.random() - 0.5) * 800;
+
+        const current =
+            star.getAttribute("transform");
+
+        star.animate(
+            [
+                {
+                    transform: current
+                },
+                {
+                    transform:
+                        current +
+                        ` translate(${x},${y})`
+                }
+            ],
+            {
+                duration: 2500,
+                fill: "forwards",
+                easing: "ease-out"
+            }
+        );
+
+    });
+
+}
 
 }
