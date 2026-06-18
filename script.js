@@ -18,9 +18,11 @@ for(let i = 0; i < 80; i++) {
 
 }
 
-document.addEventListener("click", (e) => {
-    console.log("Clicked:", e.target);
-});
+const messages = [
+    "Message 1",
+    "Message 2",
+    "Message 3"
+];
 
 const lines =
     document.querySelectorAll(".storyLine");
@@ -190,6 +192,7 @@ function wiggleCork() {
         }
     );
 
+
     setTimeout(
         popCork,
         750
@@ -254,9 +257,12 @@ function releaseStars() {
 
     setTimeout(() => {
 
+        document.getElementById("bottleScene")
+            .style.display = "none";
+
         showStarField();
 
-    }, 1200);
+    }, 1500);
 
 }
 
