@@ -35,6 +35,7 @@ const cork =
 
 bottle.addEventListener("click", () => {
     console.log("BOTTLE CLICKED");
+    openBottle();
 });
 
 let bottleOpened = false;
