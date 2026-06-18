@@ -243,10 +243,10 @@ function releaseStars() {
 
     bottleStars.forEach(star => {
 
-        const x =
+        const dx =
             (Math.random() - 0.5) * 1200;
 
-        const y =
+        const dy =
             (Math.random() - 0.5) * 800;
 
         star.style.transformOrigin = "center";
