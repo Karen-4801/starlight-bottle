@@ -238,36 +238,91 @@ function releaseStars() {
     duration: 400
 }
 );
-    console.log(bottleStars);
+    
+   document
+        .getElementById("bottle")
+        .animate(
+            [
+                { opacity: 1 },
+                { opacity: 0 }
+            ],
+            {
+                duration: 1500,
+                fill: "forwards"
+            }
+        );
 
+    setTimeout(() => {
 
-    bottleStars.forEach(star => {
+        showStarField();
 
-        const dx =
-            (Math.random() - 0.5) * 1200;
+    }, 1200);
 
-        const dy =
-            (Math.random() - 0.5) * 800;
+}
 
-        star.style.transformOrigin = "center";
+function showStarField() {
 
-        star.animate(
+    createStarField();
+
+    document.body.animate(
 [
     {
-        transform:
-            "translate(0px,0px)"
+        filter: "brightness(1)"
     },
     {
-        transform:
-            `translate(${dx}px,${dy}px)`
+        filter: "brightness(2)"
+    },
+    {
+        filter: "brightness(1)"
     }
 ],
 {
-    duration: 3000,
-    fill: "forwards"
+    duration: 800
 }
 );
 
-    });
+    starField.style.opacity = "1";
+
+    starField.style.pointerEvents =
+        "auto";
+
+}
+
+function createStarField() {
+
+    starField.innerHTML = "";
+
+    for(let i = 0; i < messages.length; i++) {
+
+        const star =
+            document.createElement("div");
+
+        star.className = "messageStar";
+
+        star.innerHTML = "⭐";
+
+        star.style.left =
+            Math.random() *
+            window.innerWidth + "px";
+
+        star.style.top =
+            Math.random() *
+            window.innerHeight + "px";
+
+        star.addEventListener("click", () => {
+
+            starNumber.textContent =
+                `Star ${i + 1}`;
+
+            starMessage.textContent =
+                messages[i];
+
+            modal.classList.remove("hidden");
+
+        });
+
+        starField.appendChild(star);
+
+    }
 
 }
