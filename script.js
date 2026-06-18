@@ -249,18 +249,14 @@ function releaseStars() {
         const y =
             (Math.random() - 0.5) * 800;
 
-        const current =
-            star.getAttribute("transform");
-
         star.animate(
             [
                 {
-                    transform: current
+                    transform: "translate(0px, 0px)"
                 },
                 {
                     transform:
-                        current +
-                        ` translate(${x},${y})`
+                        `translate(${x}px, ${y}px)`
                 }
             ],
             {
