@@ -17,6 +17,11 @@ for(let i = 0; i < 80; i++) {
     document.body.appendChild(star);
 
 }
+
+document.addEventListener("click", (e) => {
+    console.log("Clicked:", e.target);
+});
+
 const lines =
     document.querySelectorAll(".storyLine");
 
