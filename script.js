@@ -24,6 +24,15 @@ const messages = [
     "Message 3"
 ];
 
+const modal =
+    document.getElementById("messageModal");
+
+const starNumber =
+    document.getElementById("starNumber");
+
+const starMessage =
+    document.getElementById("starMessage");
+
 const lines =
     document.querySelectorAll(".storyLine");
 
