@@ -14,6 +14,7 @@ for(let i = 0; i < 80; i++) {
     star.style.animationDelay =
         Math.random() * 3 + "s";
 
+
     document.body.appendChild(star);
 
 }
@@ -432,18 +433,47 @@ function createStarField() {
 
         star.addEventListener("click", () => {
 
-            starNumber.textContent =
-                `Star ${i + 1}`;
+    star.classList.add("opened");
 
-            starMessage.textContent =
-                messages[i];
+    starNumber.textContent =
+        `Star ${i + 1}`;
 
-            modal.classList.remove("hidden");
+    starMessage.textContent =
+        messages[i];
 
-        });
+    modal.classList.remove("hidden");
+
+    updateCounter();
+
+});
 
         starField.appendChild(star);
 
     }
+
+}
+
+function updateCounter() {
+
+    const opened =
+        document.querySelectorAll(
+            ".messageStar.opened"
+        ).length;
+
+    document.getElementById("counter")
+        .textContent =
+        `⭐ ${opened} / ${messages.length} Stars Found`;
+
+    if(opened === messages.length) {
+
+    setTimeout(() => {
+
+        alert(
+            "✨ You found every star in the bottle. Happy Birthday, Hugo. ✨"
+        );
+
+    }, 500);
+
+}
 
 }
