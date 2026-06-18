@@ -249,22 +249,24 @@ function releaseStars() {
         const y =
             (Math.random() - 0.5) * 800;
 
+        star.style.transformOrigin = "center";
+
         star.animate(
-            [
-                {
-                    transform: "translate(0px, 0px)"
-                },
-                {
-                    transform:
-                        `translate(${x}px, ${y}px)`
-                }
-            ],
-            {
-                duration: 2500,
-                fill: "forwards",
-                easing: "ease-out"
-            }
-        );
+[
+    {
+        transform:
+            "translate(0px,0px)"
+    },
+    {
+        transform:
+            `translate(${dx}px,${dy}px)`
+    }
+],
+{
+    duration: 3000,
+    fill: "forwards"
+}
+);
 
     });
 
