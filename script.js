@@ -33,6 +33,8 @@ console.log("Bottle:", bottle);
 const cork =
     document.getElementById("cork");
 
+const bottleStars = [];
+
 bottle.addEventListener("click", () => {
     console.log("BOTTLE CLICKED");
     openBottle();
@@ -111,7 +113,7 @@ const svgNS =
 const starLayer =
     document.getElementById("starLayer");
     
-const bottleStars = [];
+
     
  for(let i = 0; i < 100; i++) {   
      
@@ -236,9 +238,7 @@ function releaseStars() {
     duration: 400
 }
 );
-    console.log(
-        "Stars released!"
-    );
+    console.log(bottleStars);
 
 
     bottleStars.forEach(star => {
