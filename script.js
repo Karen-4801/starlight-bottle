@@ -240,7 +240,6 @@ function releaseStars() {
         "Stars released!"
     );
 
-    function releaseStars() {
 
     bottleStars.forEach(star => {
 
@@ -272,7 +271,5 @@ function releaseStars() {
         );
 
     });
-
-}
 
 }
