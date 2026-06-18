@@ -27,6 +27,15 @@ const messages = [
 const modal =
     document.getElementById("messageModal");
 
+const closeModal =
+    document.getElementById("closeModal");
+
+closeModal.addEventListener("click", () => {
+
+    modal.classList.add("hidden");
+
+});
+
 const starNumber =
     document.getElementById("starNumber");
 
